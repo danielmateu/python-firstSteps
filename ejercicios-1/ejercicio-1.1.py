@@ -6,17 +6,24 @@ otros_cursos_max = 7
 otros_cursos_promedio = 4
 curso_actual = 1.5
 
-#duracoin de crudos
+#duracion de crudos
 crudo_promedio = 5
 crudo_actual = 3.5
 
 #Diferencia de duración
-diferencia_con_min = 100 - curso_actual / otros_cursos_min * 100
-diferencia_con_max = 100 - curso_actual * 1000 // otros_cursos_max / 10
-diferencia_con_promedio = 100 - curso_actual / otros_cursos_promedio * 100
+porcentaje_min = round(curso_actual / otros_cursos_min * 100, 2)
+porcentaje_max = round(curso_actual / otros_cursos_max * 100, 2)
+porcentaje_promedio = round(curso_actual / otros_cursos_promedio * 100, 2)
+# diferencia_con_min = 100 - curso_actual / otros_cursos_min * 100
+# diferencia_con_max = 100 - curso_actual * 1000 // otros_cursos_max / 10
+# diferencia_con_promedio = 100 - curso_actual / otros_cursos_promedio * 100
+diferencia_con_min = 100 - porcentaje_min
+diferencia_con_max = 100 - porcentaje_max
+diferencia_con_promedio = 100 - porcentaje_promedio
 
 #Calculado el porcentaje de tiempo vacio
-tiempo_vacio_promedio = 100 - otros_cursos_promedio * 1000 // crudo_promedio / 10
+# tiempo_vacio_promedio = 100 - otros_cursos_promedio * 1000 // crudo_promedio / 10
+tiempo_vacio_promedio = 100 - otros_cursos_promedio * 100 / crudo_promedio 
 tiempo_vacio_curso_actual = 100 - curso_actual * 1000 // crudo_actual / 10
 
 #mostrando las diferencias de duración (Ejercicio A)
