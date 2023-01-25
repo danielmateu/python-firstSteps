@@ -24,8 +24,10 @@ def crear_pasword_random(num):
     c3 = num - 5
     password = f'{chars[c1]}{chars[c2]}{chars[c3]}{num*2}'
     # print(password)
-    return password
-    
-password = crear_pasword_random(2)
-frase = f'Tu contraseña es {password}'
+    return password, num
+# Desempaquetando la funcion   
+password, num = crear_pasword_random(25)
+
+# Mostrando los resultados obtenidos y los datos utilizados para obtenerlos
+frase = f'Tu contraseña es {password} y el número usado fue {num}'
 print(frase)
