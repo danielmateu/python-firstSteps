@@ -11,10 +11,12 @@ def sumar_dos():
         try:
             # Adding the two numbers.
             resultado = int(num1) + int(num2)
-        except Exception as e:
+        except ValueError as e:
             # Printing a message to the user.
             print('Introduce un numeroDebes introducir dos números, ambécil')
-            print(f'Error: {e}')
+            print(f'Error: {type(e).__name__}')
+        # except ZeroDivisionError as e:
+            
         # Breaking the loop.
         else:  break
         # Printing a message to the user.
