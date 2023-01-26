@@ -37,3 +37,11 @@ result = re.match(pattern, email)
 if result: print('Dirección de correo válida')
 else:  print('Dirección de correo no válida')
 
+# URL Pagina web correcta
+text_web = 'Mi dirección: https://www.nukpeluk.com'
+
+pattern = 'https?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+
+result = re.findall(pattern, text_web)
+print(result)
+
